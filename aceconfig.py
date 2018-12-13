@@ -77,7 +77,7 @@ class AceConfig(acedefconfig.AceDefConfig):
         '192.168.0.0/16',
         )
     # Maximum concurrent connections (video clients)
-    maxconns = 10
+    maxconns = 5
     #
     # ----------------------------------------------------
     #       Transcoding configuration for HTTP AceProxy
