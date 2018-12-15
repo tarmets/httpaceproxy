@@ -131,27 +131,26 @@ class AceConfig(acedefconfig.AceDefConfig):
             return False
         elif useragent in AceConfig.fakeuas:
             return True
-       # MXPlayer/1.7.40 for Android
-        elif 'MXPlayer/1.7.40' in useragent and 'Mozilla/5.0 (Linux; Android 4.4.3; en-US; Nexus 6 Build/LMY47Z) MXPlayer/1.7.40' in headers:
-            return True
        # Samsung ES series
         elif useragent == 'Lavf/55.33.100' and headers.get('Range') != 'bytes=0-':
             return True
-       # Samsung H series
+        # Samsung H series
         elif useragent == 'Lavf52.104.0' and headers.get('Range') != 'bytes=0-':
             return True
-       # LG Netacast 2013 year series
+        # LG Netacast 2013 year series
         elif useragent == 'GStreamer souphttpsrc (compatible; LG NetCast.TV-2013) libsoup/2.34.2' and headers.get('icy-metadata') != '1':
             return True
-       # Samsung K series
-        elif useragent == 'Mozilla/5.0 (SMART-TV; Linux; Tizen 2.4.0) AppleWebKit/538.1 (KHTML, like Gecko) Version/2.4.0 TV Safari/538.1' and 'Range$
+        # Samsung K series
+        elif useragent == 'Mozilla/5.0 (SMART-TV; Linux; Tizen 2.4.0) AppleWebKit/538.1 (KHTML, like Gecko) Version/2.4.0 TV Safari/538.1' and 'Range' in headers and not 'accept-encoding' in headers:
             return True
         elif useragent == 'samsung-agent/1.1' and 'Range' in headers and not 'accept-encoding' in headers:
             return True
-       # Samsung N series
-        elif useragent == 'Mozilla/5.0 (SMART-TV; LINUX; Tizen 4.0) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 TV Safari/537.36' and 'Range' $
+        # Samsung N series
+        elif useragent == 'Mozilla/5.0 (SMART-TV; LINUX; Tizen 4.0) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 TV Safari/537.36' and 'Range' in headers and not 'accept-encoding' in headers:
             return True
-       # Dune 301
+         # Dune 301
         elif useragent == 'DuneHD/1.0' and headers.get('Range') != 'bytes=0-':
             return True
-        
+         # MXPlayer/1.7.40 for Android
+        elif 'MXPlayer/1.7.40' in useragent and 'Mozilla/5.0 (Linux; Android 4.4.3; en-US; Nexus 6 Build/LMY47Z) MXPlayer/1.7.40' in headers:
+            return True
