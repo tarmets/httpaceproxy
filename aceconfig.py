@@ -78,6 +78,8 @@ class AceConfig(acedefconfig.AceDefConfig):
         )
     # Maximum concurrent connections (video clients)
     maxconns = 5
+    # Use 'Transfer-encoding: chunked' in HTTP AceProxy responses
+    use_chunked = True
     #
     # ----------------------------------------------------
     #       Transcoding configuration for HTTP AceProxy
@@ -154,3 +156,4 @@ class AceConfig(acedefconfig.AceDefConfig):
          # Dune 301
         elif useragent == 'DuneHD/1.0' and headers.get('Range') != 'bytes=0-':
             return True
+        
