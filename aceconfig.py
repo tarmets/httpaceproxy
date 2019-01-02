@@ -135,9 +135,6 @@ class AceConfig(acedefconfig.AceDefConfig):
             return False
         elif useragent in AceConfig.fakeuas:
             return True
-       # MXPlayer/1.7.40 for Android
-        elif 'MXPlayer/1.7.40' in useragent and 'Mozilla/5.0 (Linux; Android 4.4.3; en-US; Nexus 6 Build/LMY47Z) MXPlayer/1.7.40' in headers:
-            return True
        # Samsung ES series
         elif useragent == 'Lavf/55.33.100' and headers.get('Range') != 'bytes=0-':
             return True
@@ -158,4 +155,6 @@ class AceConfig(acedefconfig.AceDefConfig):
          # Dune 301
         elif useragent == 'DuneHD/1.0' and headers.get('Range') != 'bytes=0-':
             return True
-        
+         # MX Player 1.10.xx for Android
+        elif 'MXPlayer/1.10.' in useragent and 'Accept-Encoding' in headers:
+            return True
