@@ -39,7 +39,7 @@ class AceConfig(acedefconfig.AceDefConfig):
     # ----------------------------------------------------
     # Since version 3.1.x is implemented HTTP API
     # Useed AceStream API method False - Engine API, True - HTTP API
-    new_api = False
+    new_api = True
     # For HLS transcode options is avalible:
     # Transcode All audio to AAC (transcode_audio=1)
     # Transcode MP3 (use only when transcode_audio=1)
@@ -156,6 +156,6 @@ class AceConfig(acedefconfig.AceDefConfig):
          # Dune 301
         elif useragent == 'DuneHD/1.0' and headers.get('Range') != 'bytes=0-':
             return True
-         # MX Player 1.10.xx for Android
-        elif 'MXPlayer/1.10.' in useragent and 'Accept-Encoding' in headers:
+         # MXPlayer/1.7.40 for Android
+        elif useragent == 'Mozilla/5.0 (Linux; Android 7.0; Nexus 6 Build/NBD92G) MXPlayer/1.7.40' in headers:
             return True
