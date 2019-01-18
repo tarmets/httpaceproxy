@@ -1,6 +1,6 @@
 # HTTPAceProxy® https://github.com/pepsik-kiev/HTTPAceProxy
 
-# Torrent TV IPTV
+# Torrent-TV
 
 # Полностью настроен под супер помойку!
 
