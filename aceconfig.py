@@ -39,7 +39,7 @@ class AceConfig(acedefconfig.AceDefConfig):
     # ----------------------------------------------------
     # Since version 3.1.x is implemented HTTP API
     # Useed AceStream API method False - Engine API, True - HTTP API
-    new_api = False
+    new_api = True
     # For HLS transcode options is avalible:
     # Transcode All audio to AAC (transcode_audio=1)
     # Transcode MP3 (use only when transcode_audio=1)
