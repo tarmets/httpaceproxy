@@ -165,9 +165,11 @@ class AceConfig(acedefconfig.AceDefConfig):
             return True
          # Dune 301
         elif useragent == 'DuneHD/1.0' and headers.get('Range') != 'bytes=0-':
-         # Philips TV 2018 Android
-        elif useragent == 'Mozillz/5.0 (Linux; Android 7.0; Philips TPM171E Build/Ntg46) IPTV/4.2.2' in headers:
             return True
-         # MX Player V1.10.35 for Android
+         # MX MX Player V1.10.35 for Android
         elif 'MXPlayer/1.10.35' in useragent and 'Accept-Encoding' in headers:
             return True
+         # Philips Android TV
+        elif useragent == 'Mozillz/5.0 (Linux; Android 7.0; Philips TPM171E Build/Ntg46) IPTV/4.2.2' in headers:
+            return True
+        
