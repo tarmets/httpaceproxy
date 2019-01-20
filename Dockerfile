@@ -5,7 +5,7 @@ EXPOSE 8621 62062 6878 8081
 
 RUN \
 dnf update -yq && \
-dnf -y install nano mc python3 python3-pip python3-devel wget tzdata && \
+dnf -y install htop unzip nano mc python3 python3-pip python3-devel wget tzdata && \
 dnf -y group install "C Development Tools and Libraries" && \
 pip3 install --upgrade psutil && \
 pip3 install --upgrade gevent && \
