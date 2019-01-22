@@ -39,7 +39,7 @@ class AceConfig(acedefconfig.AceDefConfig):
     # ----------------------------------------------------
     # Since version 3.1.x is implemented HTTP API
     # Useed AceStream API method False - Engine API, True - HTTP API
-    new_api = False
+    new_api = True
     # For HLS transcode options is avalible:
     # Transcode All audio to AAC (transcode_audio=1)
     # Transcode MP3 (use only when transcode_audio=1)
@@ -87,29 +87,19 @@ class AceConfig(acedefconfig.AceDefConfig):
     # ----------------------------------------------------
     #       Transcoding configuration for HTTP AceProxy
     # (Lnux based OS Only!!! This solution didn't work on Windows OS)
-    #     !!!!!! Ffmpeg or VLC instaled is required !!!!!!
     # ----------------------------------------------------
-    #
     # Transcoding Dictionary with a set of transcoding commands. Transcoding command is an executable commandline expression
     # that reads an input stream from STDIN and writes a transcoded stream to STDOUT. The commands are selected
     # according to the value of the 'fmt' request parameter. For example, the following url:
     # http://loclahost:8000/channels/?type=m3u&fmt=mp2
     # contains the fmt=mp2. It means that the 'mp2' command will be used for transcoding. You may add any number
-    # of commands to this dictionary. Commands must have unique names in dictionary !
-    #
+    # of commands to this dictionary.
+    # !!!!!! Ffmpeg instaled is required !!!!!!
     transcodecmd = {}
-    #-----------------------------------------------------
-    # Using ffmpeg
-    #-----------------------------------------------------
     #transcodecmd['100k'] = 'ffmpeg -i - -c:a copy -b 100k -f mpegts -'.split()
     #transcodecmd['mp2'] = 'ffmpeg -i - -c:a mp2 -c:v mpeg2video -f mpegts -qscale:v 2 -'.split()
     #transcodecmd['mkv'] = 'ffmpeg -i - -map 0 -c:v copy -c:a copy -f matroska -'.split()
-    transcodecmd['default'] = 'ffmpeg -i - -map 0 -c:a copy -c:v copy -f mpegts -'.split()
-    #-----------------------------------------------------
-    # Using VLC (if cvlc is not installed use 'vlc -I dummy' instead)
-    #-----------------------------------------------------
-    #transcodecmd['mp4'] = 'cvlc --rc-fake-tty - --sout-all --sout=#transcode{vcodec=h264,vb=1024,acodec=mp4a,ab=192,channels=2,deinterlace}:std{access=file,mux=ts{use-key-frames},dst=-}'.split()
-    #transcodecmd['default'] = 'cvlc --rc-fake-tty - --sout-all --sout=#std{access=file,mux=ts{use-key-frames},dst=-}'.split()
+    #transcodecmd['default'] = 'ffmpeg -i - -map 0 -c:a copy -c:v copy -f mpegts -'.split()
     #
     # ----------------------------------------------------
     # Other settings
@@ -166,10 +156,6 @@ class AceConfig(acedefconfig.AceDefConfig):
          # Dune 301
         elif useragent == 'DuneHD/1.0' and headers.get('Range') != 'bytes=0-':
             return True
-         # MX MX Player V1.10.35 for Android
-        elif 'MXPlayer/1.10.35' in useragent and 'Accept-Encoding' in headers:
+         # MX Player 1.10.xx for Android
+        elif 'MXPlayer/1.10.' in useragent and 'Accept-Encoding' in headers:
             return True
-         # Philips Android TV
-        elif useragent == 'Mozillz/5.0 (Linux; Android 7.0; Philips TPM171E Build/Ntg46) IPTV/4.2.2' in headers:
-            return True
-        
