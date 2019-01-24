@@ -11,7 +11,7 @@ pip3 install --upgrade psutil && \
 pip3 install --upgrade gevent && \
 
 #acestream
-wget -o - https://www.dropbox.com/s/lahu44186oo6q75/acestream_3.1.33.1_x86_wbUI.tar.gz && \
+wget -o - https://www.dropbox.com/s/blydto9ztkxmf1z/acestream_3.1.33.1_x86_wbUI.tar.gz && \
 tar -zxvf acestream_3.1.33.1_x86_wbUI.tar.gz && \
 mv acestream.engine/ /opt/ && \
 dnf -y autoremove && \
