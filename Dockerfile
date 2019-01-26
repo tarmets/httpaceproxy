@@ -1,7 +1,7 @@
 FROM fedora:rawhide
 
 # set ports
-EXPOSE 8621 62062 6878 8081
+EXPOSE 8621 6878 8081
 
 RUN \
 dnf update -yq && \
