@@ -1,4 +1,4 @@
-FROM fedora:rawhide
+FROM fedora
 
 # set ports
 EXPOSE 8621 6878 8081
