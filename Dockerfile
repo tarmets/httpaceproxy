@@ -29,5 +29,5 @@ ADD aceconfig.py /opt/HTTPAceProxy-master/aceconfig.py
 ADD start.sh /bin/start.sh
 RUN chmod +x /bin/start.sh
 
-CMD ["//bin/sh/start.sh"]
+CMD ["/bin/start.sh"]
 
