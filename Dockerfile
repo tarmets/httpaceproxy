@@ -30,4 +30,3 @@ ADD start.sh /bin/start.sh
 RUN chmod +x /bin/start.sh
 
 CMD ["/bin/start.sh"]
-
