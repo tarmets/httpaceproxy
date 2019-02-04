@@ -17,4 +17,4 @@
 
 # SYSTEM INFO:
 `http://your_server_ip:8081/stat`
-![screenshot of sample](https://www.dropbox.com/s/f8st89t9ok6du89/43434234.jpg?dl=0)
+![screenshot of sample](https://i.ibb.co/B24647m/43434234.jpg)
