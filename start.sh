@@ -1,6 +1,6 @@
 #!/bin/sh
 
-/usr/bin/python3.7 /opt/HTTPAceProxy-master/acehttp.py >/dev/null 2>&1 &
+/usr/bin/python3.6 /opt/HTTPAceProxy-master/acehttp.py >/dev/null 2>&1 &
 
 while true; do
         sleep 600
