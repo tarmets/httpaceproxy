@@ -20,7 +20,7 @@ nano && \
 apt-get autoremove -y && \
 
 
-#acestream
+# install acestream
 wget -o - https://www.dropbox.com/s/blydto9ztkxmf1z/acestream_3.1.33.1_x86_wbUI.tar.gz && \
 tar -zxvf acestream_3.1.33.1_x86_wbUI.tar.gz && \
 mv acestream.engine/ /opt/ && \
