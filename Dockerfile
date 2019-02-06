@@ -1,32 +1,40 @@
-FROM fedora:rawhide
+FROM ubuntu:18.10
 
 # set ports
-EXPOSE 8621 6878 8081
+EXPOSE 8621 62062 6878 8081
 
 RUN \
-dnf update -yq && \
-dnf -y install htop unzip nano mc python3 python3-pip python3-devel wget tzdata && \
-dnf -y group install "C Development Tools and Libraries" && \
-pip3 install --upgrade psutil && \
-pip3 install --upgrade gevent && \
+apt-get update && apt-get upgrade -y && \
+apt-get install -y \
+git \
+python3 \
+python-pip \
+python3.7-gevent \
+python3-psutil \
+mc \
+tar \
+unzip \
+htop \
+wget \
+nano && \
+apt-get autoremove -y && \
+
 
 #acestream
 wget -o - https://www.dropbox.com/s/blydto9ztkxmf1z/acestream_3.1.33.1_x86_wbUI.tar.gz && \
 tar -zxvf acestream_3.1.33.1_x86_wbUI.tar.gz && \
 mv acestream.engine/ /opt/ && \
-dnf -y autoremove && \
+apt-get autoremove -y && \
 
 # install aceproxy
 wget -o - https://www.dropbox.com/s/sy3qvrtvp60n648/HTTPAceProxy-master.zip -O aceproxy.zip && \
 unzip aceproxy.zip -d /opt/ && \
 
 # cleanup
-dnf -y remove python3-devel && \
-dnf -y group remove "C Development Tools and Libraries" && \
 rm -rf acestream_3.1.33.1_x86_wbUI.tar.gz aceproxy.zip
 
 ADD aceconfig.py /opt/HTTPAceProxy-master/aceconfig.py
-ADD start.sh /bin/start.sh
-RUN chmod +x /bin/start.sh
+ADD start.sh /bash/start.sh
+RUN chmod +x /bash/start.sh
 
-CMD ["/bin/start.sh"]
+CMD ["/bash/start.sh"]
