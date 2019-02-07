@@ -24,16 +24,14 @@ apt-get autoremove -y && \
 wget -o - https://www.dropbox.com/s/blydto9ztkxmf1z/acestream_3.1.33.1_x86_wbUI.tar.gz && \
 tar -zxvf acestream_3.1.33.1_x86_wbUI.tar.gz && \
 mv acestream.engine/ /opt/ && \
-apt-get autoremove -y && \
 
 # install aceproxy
-wget -o - https://www.dropbox.com/s/sy3qvrtvp60n648/HTTPAceProxy-master.zip -O aceproxy.zip && \
-unzip aceproxy.zip -d /opt/ && \
+wget -o - https://www.dropbox.com/s/sy3qvrtvp60n648/HTTPAceProxy-master.zip && \
+unzip HTTPAceProxy-master.zip -d /opt/ && \
 
 # cleanup
-rm -rf acestream_3.1.33.1_x86_wbUI.tar.gz aceproxy.zip
+rm -rf acestream_3.1.33.1_x86_wbUI.tar.gz HTTPAceProxy-master.zip
 
-ADD aceconfig.py /opt/HTTPAceProxy-master/aceconfig.py
 ADD start.sh /bash/start.sh
 RUN chmod +x /bash/start.sh
 
