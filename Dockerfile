@@ -4,7 +4,7 @@ FROM python:3.7.2-alpine3.9
 EXPOSE 8621 62062 6878 8081
 
 RUN apk update && apk add bash
-RUN apk add --no-cache bash python3 py3-gevent py-psutil screen nano unzip mc wget tar git && \
+RUN apk add --no-cache bash python3 py3-gevent py-psutil screen nano unzip mc wget tar git tzdata && \
 
 # install acestream
 wget -o - https://www.dropbox.com/s/blydto9ztkxmf1z/acestream_3.1.33.1_x86_wbUI.tar.gz && \
