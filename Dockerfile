@@ -1,24 +1,10 @@
-FROM ubuntu:18.10
+FROM python:3.7.2-alpine3.9
 
 # set ports
 EXPOSE 8621 62062 6878 8081
 
-RUN \
-apt-get update && apt-get upgrade -y && \
-apt-get install -y \
-git \
-python3 \
-python-pip \
-python3.7-gevent \
-python3-psutil \
-mc \
-tar \
-unzip \
-htop \
-wget \
-nano && \
-apt-get autoremove -y && \
-
+RUN apk update && apk add bash
+RUN apk add --no-cache bash python3 py3-gevent py-psutil screen nano unzip mc wget tar git && \
 
 # install acestream
 wget -o - https://www.dropbox.com/s/blydto9ztkxmf1z/acestream_3.1.33.1_x86_wbUI.tar.gz && \
