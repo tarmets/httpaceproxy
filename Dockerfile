@@ -12,10 +12,10 @@ mv acestream.engine/ /opt/ && \
 
 # install aceproxy
 wget -o - https://github.com/pepsik-kiev/HTTPAceProxy/archive/master.zip && \
-unzip HTTPAceProxy-master.zip -d /opt/ && \
+unzip master.zip -d /opt/ && \
 
 # cleanup
-rm -rf acestream_3.1.33.1_x86_wbUI.tar.gz HTTPAceProxy-master.zip
+rm -rf acestream_3.1.33.1_x86_wbUI.tar.gz master.zip
 
 ADD add/torrenttelik.py /opt/HTTPAceProxy-master/plugins/config/torrenttelik.py
 ADD add/aceconfig.py /opt/HTTPAceProxy-master/aceconfig.py
