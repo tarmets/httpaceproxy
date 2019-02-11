@@ -6,7 +6,7 @@
 
 # Установка
 
-`docker run -d --net=host -e PGID=0 -e PUID=0 --restart always --privileged --name=aceproxy -e TZ=Europe/Helsinki tarmets/httpaceproxy`
+`docker run -d --net=host -e PGID=0 -e PUID=0 --restart always --privileged --name=aceproxy -e TZ=Europe/Moscow tarmets/httpaceproxy`
 
 
 # TZ='timezone'
