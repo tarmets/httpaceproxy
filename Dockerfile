@@ -11,12 +11,16 @@ tar -zxvf acestream_3.1.33.1_x86_wbUI.tar.gz && \
 mv acestream.engine/ /opt/ && \
 
 # install aceproxy
-wget -o - https://www.dropbox.com/s/sy3qvrtvp60n648/HTTPAceProxy-master.zip && \
+wget -o - https://github.com/pepsik-kiev/HTTPAceProxy/archive/master.zip && \
 unzip HTTPAceProxy-master.zip -d /opt/ && \
 
 # cleanup
 rm -rf acestream_3.1.33.1_x86_wbUI.tar.gz HTTPAceProxy-master.zip
 
+ADD add/torrenttelik.py /opt/HTTPAceProxy-master/plugins/config/torrenttelik.py
+ADD add/aceconfig.py /opt/HTTPAceProxy-master/aceconfig.py
+ADD add/torrenttv.py /opt/HTTPAceProxy-master/plugins/config/torrenttv.py
+ADD add/playlist.py /opt/HTTPAceProxy-master/modules/playlist.py
 ADD start.sh /bash/start.sh
 RUN chmod +x /bash/start.sh
 
