@@ -4,11 +4,11 @@ from urllib3.packages.six import ensure_text
 class PlaylistConfig():
 
     # Default playlist format
-    m3uemptyheader = '#EXTM3U\n'
-    m3uheader = '#EXTM3U deinterlace=1 m3uautoload=1 cache=1000\n'
-    # If you need the #EXTGRP field put this #EXTGRP:%(group)s\n after %(name)s\n.
+    m3uemptyheader = u'#EXTM3U\n'
+    m3uheader = u'#EXTM3U deinterlace=1 m3uautoload=1 cache=1000\n'
+    # If you need the #EXTGRP field put this #EXTGRP:{group}\n after {name}\n.
     m3uchanneltemplate = \
-       '#EXTINF:-1 group-title="%(group)s" tvg-name="%(tvg)s" tvg-id="%(tvgid)s" tvg-logo="%(logo)s",%(name)s\n#EXTGRP:%(group)s\n%(url)s\n'
+       u'#EXTINF:-1 group-title="{group}" tvg-name="{tvg}" tvg-id="{tvgid}" tvg-logo="{logo}",{name}\n#EXTGRP:{group}\n{url}\n'
 
     # Playlist sorting options.
     sort = True
@@ -74,24 +74,39 @@ class PlaylistConfig():
     m3utvgnames['A1'] = 'Amedia 1'
     m3utvgnames['A2'] = 'Amedia 2'
     m3utvgnames['TV 1000'] = 'TV1000'
-    m3utvgnames['TV 1000 HD'] = 'TV1000 HD'
+    m3utvgnames['TV 1000 HD'] = 'TV1000'
     m3utvgnames['TV 1000 Action'] = 'TV1000 Action'
-    m3utvgnames['TV 1000 Action HD'] = 'TV1000 Action HD'
+    m3utvgnames['TV 1000 Action HD'] = 'TV1000 Action'
     m3utvgnames['TV 1000 Premium'] = 'TV1000 Premium Baltic'
     m3utvgnames['TV 1000 World Kino'] = 'TV1000 World Kino'
     m3utvgnames['TV 1000 Русское кино'] = 'TV1000 Русское кино'
     m3utvgnames['TV 1000 Русское кино HD'] = 'TV1000 Русское кино'
+    m3utvgnames['ViP Comedy HD'] = 'ViP Comedy'
+    m3utvgnames['ViP Megahit HD'] = 'ViP Megahit'
+    m3utvgnames['ViP Premiere HD'] = 'ViP Premiere'
+    m3utvgnames['ViP Serial HD'] = 'ViP Serial'
+    m3utvgnames['Epic Drama HD'] = 'Epic Drama'
     m3utvgnames['SET'] = 'Sony channel'
-    m3utvgnames['SET HD'] = 'Sony channel HD'
+    m3utvgnames['SET HD'] = 'Sony channel'
+    m3utvgnames['Sony channel HD'] = 'Sony channel'
     m3utvgnames['Sony Sci-Fi'] = 'Sony SCI-FI'
     m3utvgnames['A HBO HD'] = 'Amedia Premium HD'
+    m3utvgnames['Star Cinema HD'] = 'Star Cinema'
+    m3utvgnames['Amedia Hit HD'] = 'Amedia Hit'
     m3utvgnames['KinoTV Polska'] = 'Kino Polska'
+    m3utvgnames['FilmBox Premium HD'] = 'FilmBox Premium Polska'
     m3utvgnames['Paramount Comedy HD (Россия)'] = 'Paramount Comedy'
     m3utvgnames['Zee TV Россия'] = 'Zee TV'
+    m3utvgnames['Кинохит HD'] = 'Кинохит'
+    m3utvgnames['Дом кино Премиум'] = 'Дом кино Премиум'
+    m3utvgnames['Кинопремьера HD'] = 'Кинопремьера'
+    m3utvgnames['Мужское кино HD'] = 'Мужское кино'
+    m3utvgnames['Наш кинороман HD'] = 'Наш кинороман'
     m3utvgnames['Иллюзион+'] = 'Иллюзион +'
     m3utvgnames['КиноПремиум HD'] = 'КиноПремиумHD'
     m3utvgnames['Кинопоказ HD-1'] = 'Шокирующее (Кинопоказ HD-1)'
     m3utvgnames['НСТ'] = 'Настоящее Страшное Телевидение'
+    m3utvgnames['BOLT HD (UA)'] = 'BOLT'
     m3utvgnames['Шокирующее HD'] = 'Шокирующее (Кинопоказ HD-1)'
     m3utvgnames['ТВ 3'] = 'ТВ-3 Россия'
     m3utvgnames['HD Life'] = 'HDL'
@@ -103,6 +118,8 @@ class PlaylistConfig():
     m3utvgnames['Discovery Channel'] = 'Discovery Россия'
     m3utvgnames['Discovery Channel HD'] = 'Discovery Россия HD'
     m3utvgnames['Discovery Historia Polska'] = 'Discovery Historia'
+    m3utvgnames['History Channel'] = 'History'
+    m3utvgnames['History Channel HD'] = 'History HD'
     m3utvgnames['ID Investigation Discovery'] = 'ID Xtra (Россия)'
     m3utvgnames['ID:Investigation Discovery Europe HD'] = 'ID Xtra (Европа)'
     m3utvgnames['HDL'] = 'HDL (HD Life)'
@@ -200,9 +217,8 @@ class PlaylistConfig():
     @staticmethod
     def _changeItemByDict(item, key, replacementsDict, setKey=None):
         if len(replacementsDict) > 0:
-           value = item[key]
+           value = replacementsDict.get(item.get(key))
            if not setKey: setKey = key
-           value = replacementsDict.get(value)
            if value: item[setKey] = ensure_text(value)
 
     xml_template = """<?xml version="1.0" encoding="utf-8"?>
