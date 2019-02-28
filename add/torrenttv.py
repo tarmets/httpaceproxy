@@ -11,7 +11,7 @@ Torrent-tv.ru Playlist Downloader Plugin configuration file
 proxies = None
 
 # Insert your Torrent-tv.ru playlist URL here
-url = '91.92.66.82/trash/ttv-list/ttv.m3u'
+url = 'http://91.92.66.82/trash/ttv-list/ttv.m3u'
 
 # Download playlist every N minutes to keep it fresh
 # 0 = disabled
