@@ -1,4 +1,4 @@
-FROM python:3.7.2-alpine3.9
+FROM python:3.8-rc-alpine3.9
 
 # set ports
 EXPOSE 8621 62062 6878 8081
