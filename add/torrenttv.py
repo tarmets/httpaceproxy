@@ -11,11 +11,11 @@ Torrent-tv.ru Playlist Downloader Plugin configuration file
 proxies = None
 
 # Insert your Torrent-tv.ru playlist URL here
-url = 'http://91.92.66.82/trash/ttv-list/ttv.m3u'
+url = ''
 
 # Download playlist every N minutes to keep it fresh
 # 0 = disabled
-updateevery = 120
+updateevery = 0
 
 # TV Guide URL
 tvgurl = 'http://epg.do.am/tv.gz'
