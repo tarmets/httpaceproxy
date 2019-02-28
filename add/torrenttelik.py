@@ -1,5 +1,6 @@
 '''
 Torrent-telik.com. Configuration file for json-based playlists downloader
+
 Playlist format example:
 {"channels":[
 {"name":"Channel name 1","url":"blablablablablablablablablablablablablab","cat":"Group 1"},
@@ -11,6 +12,7 @@ Playlist format example:
 .
 {"name":"Channel name N","url":"blablablablablablablablablablablablablab","cat":"Group N"}
 ]}
+
 '''
 # Proxy settings.
 # For example you can install tor browser and add in torrc SOCKSPort 9050
