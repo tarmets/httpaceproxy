@@ -77,7 +77,7 @@ class AceConfig(acedefconfig.AceDefConfig):
         '192.168.0.0/16',
         )
     # Maximum concurrent connections (video clients)
-    maxconns = 10
+    maxconns = 5
     # Use 'Transfer-encoding: chunked' in HTTP AceProxy responses
     use_chunked = True
     #
