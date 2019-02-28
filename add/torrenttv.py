@@ -21,7 +21,7 @@ updateevery = 120
 tvgurl = 'http://epg.do.am/tv.gz'
 
 # Shift the TV Guide time to the specified number of hours
-tvgshift = 1
+tvgshift = 0
 
 # Channel playlist template
 # The following values are allowed:
