@@ -15,7 +15,7 @@ url = ''
 
 # Download playlist every N minutes to keep it fresh
 # 0 = disabled
-updateevery = 0
+updateevery = 120
 
 # TV Guide URL
 tvgurl = 'http://epg.do.am/tv.gz'
