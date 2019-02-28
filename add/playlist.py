@@ -224,7 +224,9 @@ class PlaylistConfig():
     xml_template = """<?xml version="1.0" encoding="utf-8"?>
     <items>
     <playlist_name>Playlist</playlist_name>
+
     %(items)s
+
     </items>
     """
 
