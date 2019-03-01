@@ -1,6 +1,5 @@
 '''
 Torrent-telik.com. Configuration file for json-based playlists downloader
-
 Playlist format example:
 {"channels":[
 {"name":"Channel name 1","url":"blablablablablablablablablablablablablab","cat":"Group 1"},
@@ -12,7 +11,6 @@ Playlist format example:
 .
 {"name":"Channel name N","url":"blablablablablablablablablablablablablab","cat":"Group N"}
 ]}
-
 '''
 # Proxy settings.
 # For example you can install tor browser and add in torrc SOCKSPort 9050
@@ -26,7 +24,7 @@ proxies = None
 url = 'http://91.92.66.82/trash/ttv-list/ttv.json'
 
 # EPG urls
-tvgurl = 'http://epg.do.am/tv.gz'
+tvgurl = 'https://iptvx.one/epg/epg.xml.gz'
 
 # Shift the TV Guide time to the specified number of hours
 tvgshift = 0
