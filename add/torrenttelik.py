@@ -20,7 +20,7 @@ Playlist format example:
 proxies = None
 #proxies = {'http' : 'socks5h://192.168.1.1:9100', 'https' : 'socks5h://192.168.1.1:9100'}
 
-# Channels urls
+# Channels urls or path to file ('file:///path/to/file')
 url = 'http://91.92.66.82/trash/ttv-list/ttv.json'
 
 # EPG urls
