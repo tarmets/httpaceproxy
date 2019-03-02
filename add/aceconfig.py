@@ -101,7 +101,7 @@ class AceConfig(acedefconfig.AceDefConfig):
     #transcodecmd['100k'] = 'ffmpeg -i - -c:a copy -b 100k -f mpegts -'.split()
     #transcodecmd['mp2'] = 'ffmpeg -i - -c:a mp2 -c:v mpeg2video -f mpegts -qscale:v 2 -'.split()
     #transcodecmd['mkv'] = 'ffmpeg -i - -map 0 -c:v copy -c:a copy -f matroska -'.split()
-    transcodecmd['default'] = 'ffmpeg -i - -map 0 -c:a copy -c:v copy -f mpegts -'.split()
+    #transcodecmd['default'] = 'ffmpeg -i - -map 0 -c:a copy -c:v copy -f mpegts -'.split()
     #-----------------------------------------------------
     # Using VLC (if cvlc is not installed use 'vlc -I dummy' instead)
     #-----------------------------------------------------
