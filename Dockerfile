@@ -17,7 +17,6 @@ unzip master.zip -d /opt/ && \
 # cleanup
 rm -rf acestream_3.1.33.1_x86_wbUI.tar.gz master.zip
 
-ADD add/torrenttelik.py /opt/HTTPAceProxy-master/plugins/config/torrenttelik.py
 ADD add/aceconfig.py /opt/HTTPAceProxy-master/aceconfig.py
 ADD add/torrenttv.py /opt/HTTPAceProxy-master/plugins/config/torrenttv.py
 ADD add/playlist.py /opt/HTTPAceProxy-master/modules/playlist.py
