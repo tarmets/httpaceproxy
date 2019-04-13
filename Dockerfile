@@ -6,8 +6,8 @@ EXPOSE 8621 62062 6878 8081
 RUN apk update && apk add --no-cache bash python3 py3-gevent py-psutil screen nano unzip mc wget tar git tzdata && \
 
 # install acestream
-wget -o - https://www.dropbox.com/s/2signb43i8wofv0/acestream_3.1.37_Py2.7.15_webUI_ARMv7.tar.gz && \
-tar -zxvf acestream_3.1.37_Py2.7.15_webUI_ARMv7.tar.gz && \
+wget -o - https://www.dropbox.com/s/blydto9ztkxmf1z/acestream_3.1.33.1_x86_wbUI.tar.gz && \
+tar -zxvf acestream_3.1.33.1_x86_wbUI.tar.gz && \
 mv acestream.engine/ /opt/ && \
 
 # install aceproxy
@@ -15,7 +15,7 @@ wget -o - https://github.com/pepsik-kiev/HTTPAceProxy/archive/master.zip && \
 unzip master.zip -d /opt/ && \
 
 # cleanup
-rm -rf acestream_3.1.37_Py2.7.15_webUI_ARMv7.tar.gz master.zip
+rm -rf acestream_3.1.33.1_x86_wbUI.tar.gz master.zip
 
 ADD add/aceconfig.py /opt/HTTPAceProxy-master/aceconfig.py
 ADD add/torrenttv.py /opt/HTTPAceProxy-master/plugins/config/torrenttv.py
