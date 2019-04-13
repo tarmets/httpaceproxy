@@ -15,7 +15,7 @@ url = 'http://91.92.66.82/trash/ttv-list/as.all.player.m3u'
 
 # Download playlist every N minutes to keep it fresh
 # 0 = disabled
-updateevery = 0
+updateevery = 120
 
 # TV Guide URL
 tvgurl = 'https://iptvx.one/epg/epg.xml.gz'
