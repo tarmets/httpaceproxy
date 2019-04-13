@@ -12,7 +12,7 @@ class AceConfig(acedefconfig.AceDefConfig):
     acespawn = True
     # Ace Stream cmd line (use `--log-file filepath` to write log)
     # You need to set it only on Linux based systems. Autodetect for Windows!
-    acecmd = '/opt/acestream.engine/acestream.start'
+    acecmd = '/opt/acestream.engine/start_acestream_chroot.sh'
     # Ace Stream API key
     # You probably shouldn't touch this
     acekey = 'n51LvQoTlJzNGaFxseRK-uvnvX-sD4Vm5Axwmc4UcoD-jruxmKsuJaH0eVgE'
