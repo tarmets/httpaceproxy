@@ -15,7 +15,7 @@ wget -o - https://github.com/pepsik-kiev/HTTPAceProxy/archive/master.zip && \
 unzip master.zip -d /opt/ && \
 
 # cleanup
-rm -rf acestream_3.1.33.1_x86_wbUI.tar.gz master.zip
+rm -rf acestream_3.1.37_Py2.7.15_webUI_ARMv7.tar.gz
 
 ADD add/aceconfig.py /opt/HTTPAceProxy-master/aceconfig.py
 ADD add/torrenttv.py /opt/HTTPAceProxy-master/plugins/config/torrenttv.py
