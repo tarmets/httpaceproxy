@@ -1,26 +1,55 @@
-FROM python:3.8-rc-alpine3.9
+FROM ubuntu:18.10
 
 # set ports
-EXPOSE 8621 62062 6878 8081
+EXPOSE 8081 62062 6878
 
-RUN apk update && apk add --no-cache bash python3 py3-gevent py-psutil screen nano unzip mc wget tar git tzdata && \
+# update apt and install
+RUN \
+apt-get update && apt-get upgrade -y && \
+apt-get install -y --no-install-recommends \
+python3 \
+python-pkg-resources \
+python-setuptools \
+python3-setuptools \
+python-libxslt1 \
+python-m2crypto \
+python-minimal \
+build-essential \
+libpython2.7 \
+python3-venv \
+python-wheel \
+python3-dev \
+python-apsw  \
+python-lxml \
+libssl1.0.0 \
+python3-pip \
+sudo \
+nano \
+mc \
+tar \
+unzip \
+wget \
+gcc && \
+apt autoremove -y && \
+pip3 install --upgrade psutil && \
+pip3 install --upgrade gevent && \
 
 # install acestream
-wget -o - https://www.dropbox.com/s/blydto9ztkxmf1z/acestream_3.1.33.1_x86_wbUI.tar.gz && \
-tar -zxvf acestream_3.1.33.1_x86_wbUI.tar.gz && \
+wget -o - https://www.dropbox.com/s/kz4ov7f0om260jp/acestream_3.1.35_ubuntu_18.04_x86_64.tar.gz && \
+tar -zxvf acestream_3.1.35_ubuntu_18.04_x86_64.tar.gz && \
 mv acestream.engine/ /opt/ && \
 
 # install aceproxy
 wget -o - https://github.com/pepsik-kiev/HTTPAceProxy/archive/master.zip && \
 unzip master.zip -d /opt/ && \
 
-# cleanup
-rm -rf acestream_3.1.33.1_x86_wbUI.tar.gz master.zip
+# clean up
+rm -rf acestream_3.1.35_ubuntu_18.04_x86_64.tar.gz master.zip
 
-ADD add/aceconfig.py /opt/HTTPAceProxy-master/aceconfig.py
+# add local files
 ADD add/torrenttv.py /opt/HTTPAceProxy-master/plugins/config/torrenttv.py
+ADD add/aceconfig.py /opt/HTTPAceProxy-master/aceconfig.py
 ADD add/playlist.py /opt/HTTPAceProxy-master/modules/playlist.py
 ADD start.sh /bash/start.sh
 RUN chmod +x /bash/start.sh
-
 CMD ["/bash/start.sh"]
