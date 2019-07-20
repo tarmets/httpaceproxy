@@ -39,7 +39,7 @@ pip3 install --upgrade gevent && \
 mkdir -p /movies && \
 
 # install acestream
-wget -o - https://www.dropbox.com/s/thtit0ezl8lzuo1/acestream_3.1.49_ubuntu_18.04_x86_64.zip && \
+wget -o - https://www.dropbox.com/s/6yh7tf1tr2t8is6/acestream_3.1.49_ubuntu_18.04_x86_64.zip && \
 unzip acestream_3.1.49_ubuntu_18.04_x86_64.zip -d /opt/ && \
 
 # install aceproxy
