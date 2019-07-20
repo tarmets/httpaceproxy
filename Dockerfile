@@ -1,7 +1,10 @@
 FROM ubuntu:18.10
 
 # set ports
-EXPOSE 8081 62062 6878
+EXPOSE 8081 62062 6878 8621
+
+# set config volume
+VOLUME /movies/
 
 # update apt and install
 RUN \
@@ -33,18 +36,18 @@ gcc && \
 apt autoremove -y && \
 pip3 install --upgrade psutil && \
 pip3 install --upgrade gevent && \
+mkdir -p /movies && \
 
 # install acestream
-wget -o - https://www.dropbox.com/s/kz4ov7f0om260jp/acestream_3.1.35_ubuntu_18.04_x86_64.tar.gz && \
-tar -zxvf acestream_3.1.35_ubuntu_18.04_x86_64.tar.gz && \
-mv acestream.engine/ /opt/ && \
+wget -o - https://www.dropbox.com/s/thtit0ezl8lzuo1/acestream_3.1.49_ubuntu_18.04_x86_64.zip && \
+unzip acestream_3.1.49_ubuntu_18.04_x86_64.zip -d /opt/ && \
 
 # install aceproxy
 wget -o - https://github.com/pepsik-kiev/HTTPAceProxy/archive/master.zip && \
 unzip master.zip -d /opt/ && \
 
 # clean up
-rm -rf acestream_3.1.35_ubuntu_18.04_x86_64.tar.gz master.zip
+rm -rf acestream_3.1.49_ubuntu_18.04_x86_64.zip master.zip
 
 # add local files
 ADD add/torrenttv.py /opt/HTTPAceProxy-master/plugins/config/torrenttv.py
