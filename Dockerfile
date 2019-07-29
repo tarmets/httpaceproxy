@@ -4,7 +4,7 @@ FROM ubuntu:18.10
 EXPOSE 8081 62062 6878 8621
 
 # set config volume
-VOLUME /movies/
+VOLUME /mnt/films
 
 # update apt and install
 RUN \
@@ -36,7 +36,7 @@ gcc && \
 apt autoremove -y && \
 pip3 install --upgrade psutil && \
 pip3 install --upgrade gevent && \
-mkdir -p /movies && \
+mkdir -p /mnt/films && \
 
 # install acestream
 wget -o - https://www.dropbox.com/s/6yh7tf1tr2t8is6/acestream_3.1.49_ubuntu_18.04_x86_64.zip && \
