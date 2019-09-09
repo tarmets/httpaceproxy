@@ -22,8 +22,7 @@ sudo \
 nano \
 mc \
 unzip \
-wget \
-gcc
+wget
 
 # mnt/films
 RUN mkdir -p /mnt/films
@@ -44,6 +43,8 @@ apt autoremove -y
 ADD add/torrenttv.py /opt/HTTPAceProxy-master/plugins/config/torrenttv.py
 ADD add/aceconfig.py /opt/HTTPAceProxy-master/aceconfig.py
 ADD add/playlist.py /opt/HTTPAceProxy-master/modules/playlist.py
-ADD add/start.sh /bin/start.sh
-RUN chmod +x /bin/start.sh
-CMD ["/bin/start.sh"]
+ADD add/acestream.conf /opt/acestream.engine/acestream.conf
+ADD add/start.sh /opt/start.sh
+RUN chmod +x /opt/HTTPAceProxy-master/acehttp.py
+RUN chmod +x /opt/start.sh
+CMD ["/opt/start.sh"]
