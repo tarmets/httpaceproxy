@@ -4,7 +4,7 @@
 
 # Установка
 
-`docker run -d --net=host -e PGID=0 -e PUID=0 --restart always --privileged --name=aceproxy tarmets/httpaceproxy`
+`docker run -d --net=host -e PGID=0 -e PUID=0 --restart always --privileged --name=aceproxy -e TZ=Europe/Moscow tarmets/httpaceproxy`
 
 # Контейнер
 `docker exec -it aceproxy /bin/bash`
