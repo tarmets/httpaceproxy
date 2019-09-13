@@ -27,7 +27,8 @@ nano \
 mc \
 unzip \
 wget \
-ntp
+ntp \
+unattended-upgrades
 
 # mnt/films
 RUN mkdir -p /mnt/films
@@ -37,8 +38,8 @@ RUN wget --no-check-certificate https://github.com/tarmets/httpaceproxy/blob/mas
 unzip acestream_3.1.49_ubuntu_18.04_x86_64.zip?raw=true -d /opt/
 
 # install aceproxy
-RUN wget --no-check-certificate https://github.com/tarmets/httpaceproxy/blob/master/add/HTTPAceProxy-master.zip?raw=true && \
-unzip HTTPAceProxy-master.zip?raw=true -d /opt/
+RUN wget --no-check-certificate https://github.com/pepsik-kiev/HTTPAceProxy/archive/master.zip && \
+unzip master.zip -d /opt/
 
 # clean up
 RUN rm -rf acestream_3.1.49_ubuntu_18.04_x86_64.zip?raw=true HTTPAceProxy-master.zip?raw=true && \
