@@ -42,7 +42,7 @@ RUN wget --no-check-certificate https://github.com/pepsik-kiev/HTTPAceProxy/arch
 unzip master.zip -d /opt/
 
 # clean up
-RUN rm -rf acestream_3.1.49_ubuntu_18.04_x86_64.zip?raw=true HTTPAceProxy-master.zip?raw=true && \
+RUN rm -rf acestream_3.1.49_ubuntu_18.04_x86_64.zip?raw=true master.zip && \
 apt autoremove -y
 
 # add local files
