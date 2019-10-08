@@ -48,7 +48,6 @@ apt autoremove -y
 # add local files
 ADD add/torrenttv.py /opt/HTTPAceProxy-master/plugins/config/torrenttv.py
 ADD add/aceconfig.py /opt/HTTPAceProxy-master/aceconfig.py
-ADD add/playlist.py /opt/HTTPAceProxy-master/modules/playlist.py
 ADD add/acestream.conf /opt/acestream.engine/acestream.conf
 ADD add/start.sh /opt/start.sh
 RUN chmod +x /opt/acestream.engine/start-engine
