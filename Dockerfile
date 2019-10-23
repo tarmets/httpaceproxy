@@ -2,6 +2,7 @@ FROM ubuntu:19.10
 
 # time zone data
 ENV TZ=Europe/Moscow
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # set ports
 EXPOSE 8081 62062 6878 8621
