@@ -18,7 +18,7 @@ url = 'http://91.92.66.82/trash/ttv-list/as.all.player.m3u'
 updateevery = 120
 
 # TV Guide URL
-tvgurl = 'https://iptvx.one/epg/epg.xml.gz'
+tvgurl = 'https://teleguide.info/download/new3/xmltv.xml.gz'
 
 # Shift the TV Guide time to the specified number of hours
 tvgshift = 0
@@ -32,4 +32,4 @@ tvgshift = 0
 # group - channel playlist group-title (optional)
 # logo - channel picon file tvg-logo (optional)
 m3uheadertemplate = u'#EXTM3U url-tvg="{}" tvg-shift={} deinterlace=1 m3uautoload=1 cache=1000\n'.format(tvgurl, tvgshift)
-m3uchanneltemplate = u'#EXTINF:-1 group-title="{group}" tvg-name="{tvg}",{name}\n#EXTGRP:{group}\n{url}\n'
+m3uchanneltemplate = u'#EXTINF:-1 group-title="{group}" tvg-name="{tvg}" tvg-logo="",{name}\n#EXTGRP:{group}\n{url}\n'
