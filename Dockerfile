@@ -38,7 +38,7 @@ RUN wget --no-check-certificate https://github.com/tarmets/httpaceproxy/blob/mas
 unzip acestream_3.1.49_ubuntu_18.04_x86_64.zip?raw=true -d /opt/
 
 # install aceproxy
-RUN wget --no-check-certificate https://github.com/pepsik-kiev/HTTPAceProxy/archive/master.zip && \
+RUN wget https://github.com/pepsik-kiev/HTTPAceProxy/archive/master.zip && \
 unzip master.zip -d /opt/
 
 # clean up
