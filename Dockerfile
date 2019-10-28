@@ -38,7 +38,7 @@ RUN wget --no-check-certificate https://github.com/tarmets/httpaceproxy/blob/mas
 unzip acestream_3.1.49_ubuntu_18.04_x86_64.zip?raw=true -d /opt/
 
 # install aceproxy
-RUN wget https://github.com/pepsik-kiev/HTTPAceProxy/archive/master.zip && \
+RUN wget --no-check-certificate https://github.com/pepsik-kiev/HTTPAceProxy/archive/master.zip && \
 unzip master.zip -d /opt/
 
 # clean up
@@ -48,7 +48,6 @@ apt autoremove -y
 # add local files
 ADD add/torrenttv.py /opt/HTTPAceProxy-master/plugins/config/torrenttv.py
 ADD add/aceconfig.py /opt/HTTPAceProxy-master/aceconfig.py
-ADD add/acestream.conf /opt/acestream.engine/acestream.conf
 ADD add/start.sh /opt/start.sh
 RUN chmod +x /opt/acestream.engine/start-engine
 RUN chmod +x /opt/acestream.engine/acestreamengine
