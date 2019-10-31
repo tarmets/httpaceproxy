@@ -14,7 +14,7 @@ VOLUME /mnt/films
 RUN apt-get update && apt-get upgrade -y
 
 # install apt
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get install -y \
 python3 \
 python3-psutil \
 python3-gevent \
